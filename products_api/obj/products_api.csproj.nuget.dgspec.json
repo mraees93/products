@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {}
+    "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {
+    "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
+        "projectUniqueName": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
         "projectName": "products_api",
-        "projectPath": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
+        "projectPath": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
         "packagesPath": "C:\\Users\\Gaziem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\obj\\",
+        "outputPath": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gaziem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Gaziem\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -45,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
