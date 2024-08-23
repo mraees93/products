@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\products_api",
+    "\\products_api\\Controllers",
+    "\\products_api\\Models",
+    "\\products_api\\Properties"
+  ],
+  "SelectedNode": "\\products_api\\Controllers\\WeatherForecastController.cs",
+  "PreviewInSolutionExplorer": false
+}
