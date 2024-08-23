@@ -1,0 +1,8 @@
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.csproj.AssemblyReference.cache
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.AssemblyInfoInputs.cache
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.AssemblyInfo.cs
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.csproj.CoreCompileInputs.cache
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Gaziem\Desktop\coding\personal_projects\Products\products_api\obj\Debug\net8.0\products_api.sourcelink.json
