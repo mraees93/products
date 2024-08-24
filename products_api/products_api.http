@@ -3,4 +3,7 @@
 GET {{products_api_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{products_api_HostAddress}}/productDTO/
+Accept: application/json
+
 ###

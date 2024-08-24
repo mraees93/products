@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {}
+    "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {
+    "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
+        "projectUniqueName": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
         "projectName": "products_api",
-        "projectPath": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
+        "projectPath": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\products_api.csproj",
         "packagesPath": "C:\\Users\\Gaziem\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\obj\\",
+        "outputPath": "C:\\Users\\Gaziem\\Desktop\\coding\\personal_projects\\Products\\products_api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gaziem\\AppData\\Roaming\\NuGet\\NuGet.Config"
