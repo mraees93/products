@@ -9,3 +9,4 @@ export const fetchData = async (endpoint) => {
     return error;
   }
 };
+
