@@ -17,13 +17,13 @@ export const Products = () => {
       .catch((err) => console.log("this is", err))
       .finally(() => setIsLoading(false));
     setIsLoading(true);
-    if (data) {
-      setIsLoading(false);
-    } else {
-      setIsLoading(false);
-      setData("Couldnt retrieve products");
-    }
-  }, [data]);
+    // if (data) {
+    //   setIsLoading(false);
+    // } else {
+    //   setIsLoading(false);
+    //   setData("Couldnt retrieve products");
+    // }
+  }, []);
 
 //   const handleProductID = (idx) => setProductID(idx + 1)
 
