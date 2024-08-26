@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { fetchData } from "../utils/fetchData";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setProductID } from "../redux/reducer";
+import { setProductID, getProductSales } from "../redux/reducer";
 
 export const ProductSalesTable = () => {
-  const [productSales, setProductSales] = useState([]);
   const productID = useSelector((state) => state.productID);
+  const productSales = useSelector((state) => state.productSales);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (productID !== undefined) {
       fetchData(`product-sales/${productID}`)
-        .then((response) => setProductSales(response.data))
+        .then((response) => dispatch(getProductSales(response.data)))
         .catch((error) => error);
     }
-  }, [productID]);
+  }, [productID, dispatch]);
 
   return (
     <div>
@@ -41,12 +41,13 @@ export const ProductSalesTable = () => {
         </tbody>
       </table>
       <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
         onClick={() => {
           navigate("/");
           dispatch(setProductID(undefined));
         }}
       >
-        Back to images
+        Back
       </button>
     </div>
   );
