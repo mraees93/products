@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using products_api.Model;
@@ -10,41 +6,36 @@ namespace products_api.Controllers
 {
     [ApiController]
     [Route("api/products")]
-    public class ProductController : ControllerBase
+    public class ProductController(IHttpClientFactory httpClientFactory) : ControllerBase
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-
-        public ProductController(IHttpClientFactory httpClientFactory)
-        {
-            _httpClientFactory = httpClientFactory;
-        }
+        private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsAsync()
+        public async Task<ActionResult<IAsyncEnumerable<Product>>> GetProducts()
         {
             try
             {
                 var httpClient = _httpClientFactory.CreateClient();
+                var productsURL = "https://singularsystems-tech-assessment-sales-api2.azurewebsites.net/products";
                 
-                var request = new HttpRequestMessage(HttpMethod.Get, "https://singularsystems-tech-assessment-sales-api2.azurewebsites.net/products");
+                var request = new HttpRequestMessage(HttpMethod.Get, productsURL);
                 var response = await httpClient.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)
                 {
                     var responseBody = await response.Content.ReadAsStringAsync();
-                    var data = JsonConvert.DeserializeObject<List<Product>>(responseBody);
+                    var products = JsonConvert.DeserializeObject<List<Product>>(responseBody);
                     
-                    return Ok(data);
+                    return Ok(products);
                 }
                 else
                 {
                     return StatusCode((int)response.StatusCode, await response.Content.ReadAsStringAsync());
                 }
             } 
-            catch (HttpRequestException ex)
+            catch (HttpRequestException exception)
             {
-                Console.WriteLine($"Error fetching data: {ex.Message}");
-                return StatusCode(500, "Failed to fetch data");
+                return StatusCode(500, $"Failed to fetch products: {exception.Message}");
             }
         }
     }

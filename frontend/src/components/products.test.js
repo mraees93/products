@@ -1,9 +1,10 @@
-import { Products } from "./Products";
-import { ProductSalesTable } from "./ProductSalesTable";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
+
+import { Products } from "./Products";
+import { ProductSalesTable } from "./ProductSalesTable";
 import { getProducts, getProductSales } from "../redux/reducer";
 
 let productsComponent;
