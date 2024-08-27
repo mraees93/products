@@ -18,7 +18,7 @@ export const ProductSalesTable = () => {
 
   return (
     <div>
-      <table>
+      <table data-testid="productSalesTableID">
         <thead>
           <tr>
             <th>Sale ID</th>
@@ -44,6 +44,7 @@ export const ProductSalesTable = () => {
           navigate("/");
           dispatch(setProductID(undefined));
         }}
+        data-testid="backButtonID"
       >
         Back
       </button>

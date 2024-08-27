@@ -18,13 +18,14 @@ export const Products = () => {
         {products
           ? products.map((product, idx) => {
               return (
-                <div key={idx} className="p-5" data-testid="productID">
+                <div key={idx} className="p-5">
                   <Link to={`/ProductSalesTable/${idx + 1}`}>
                     <img
                       onClick={() => dispatch(setProductID(idx + 1))}
                       src={product.image}
                       className=" w-48 h-48 object-cover rounded-[15px]"
                       alt={product.description}
+                      data-testid="productID"
                     />
                   </Link>
                 </div>
