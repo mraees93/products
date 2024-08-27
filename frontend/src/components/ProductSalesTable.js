@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { fetchData } from "../utils/fetchData";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setProductID, getProductSales } from "../redux/reducer";
+import { setProductID } from "../redux/reducer";
 
 export const ProductSalesTable = () => {
   const productID = useSelector((state) => state.productID);
@@ -13,10 +13,8 @@ export const ProductSalesTable = () => {
   useEffect(() => {
     if (productID !== undefined) {
       fetchData(`product-sales/${productID}`)
-        .then((response) => dispatch(getProductSales(response.data)))
-        .catch((error) => error);
     }
-  }, [productID, dispatch]);
+  }, [productID]);
 
   return (
     <div>

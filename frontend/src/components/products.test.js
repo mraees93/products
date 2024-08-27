@@ -1,38 +1,40 @@
-import {Products} from "./Products";
+import { Products } from "./Products";
 import { render, screen, waitFor } from "@testing-library/react";
+import { act } from "react";
+import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import {store} from "../redux/store";
-import { setProductID, getProducts, getProductSales } from "../redux/reducer";
+import { store } from "../redux/store";
+import { getProducts } from "../redux/reducer";
 let productsComponent;
 
 beforeEach(() => {
   productsComponent = (
     <Provider store={store}>
-      <Products />
+      <MemoryRouter>
+        <Products />
+      </MemoryRouter>
     </Provider>
   );
 });
 
-describe("App component", () => {
-  // test("should display an empty string if there are no recipes", () => {
-  //   render(recipesLayoutComponent);
-  //   expect(screen.queryByTestId("recipesLayoutID").textContent).toContain("");
-  //   expect(store.getState().recipes.length).toBe(0);
-  //   expect(store.getState().showRecipes).toBeFalsy();
-  // });
+describe("Products component", () => {
+  test("should not display the apples image in the UI, products store propery should be empty if the products haven't been fetched yet", () => {
+    render(productsComponent);
+    expect(screen.queryAllByAltText("Apples").length).toBe(0);
+    expect(store.getState().products.length).toBe(0);
+  });
 
   test("should update the store and browser with recipes", async () => {
-    const mockResponse = {
-      data: [
-        {
-          "productId": 0,
-          "description": "Apples",
-          "salePrice": 15.33,
-          "category": "Fruit",
-          "image": "https://images.pexels.com/photos/10256309/pexels-photo-10256309.jpeg?auto=compress&cs=tinysrgb&h=350"
-        }
-      ],
-    };
+    const mockResponse = [
+      {
+        productId: 0,
+        description: "Apples",
+        salePrice: 15.33,
+        category: "Fruit",
+        image:
+          "https://images.pexels.com/photos/10256309/pexels-photo-10256309.jpeg?auto=compress&cs=tinysrgb&h=350",
+      },
+    ];
 
     jest.spyOn(global, "fetch").mockImplementation(() =>
       Promise.resolve({
@@ -40,15 +42,17 @@ describe("App component", () => {
       })
     );
 
-    expect(store.getState().products.length).toBe(0);
-
     await waitFor(async () => {
       render(productsComponent);
-      await store.dispatch(getProducts(mockResponse.data));
+      store.dispatch(getProducts(mockResponse));
     });
 
-    expect(store.getState().products).toEqual(mockResponse.data);
-    // const recipeElement = screen.getAllByTestId("recipeID")[0];
-    // expect(recipeElement).toBeInTheDocument();
+    expect(store.getState().products[0]).toEqual(mockResponse[0]);
+  });
+
+  test("should display an empty string if there are no recipes", () => {
+    render(productsComponent);
+    expect(screen.queryAllByAltText("Apples").length).toBe(1);
+    expect(store.getState().products.length).toBe(0);
   });
 });
