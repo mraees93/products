@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { Products } from "./components/Products";
 import { ProductSalesTable } from "./components/ProductSalesTable";
 

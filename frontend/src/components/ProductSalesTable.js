@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { fetchData } from "../utils/fetchData";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
+import { fetchData } from "../utils/fetchData";
 import { setProductID } from "../redux/reducer";
 
 export const ProductSalesTable = () => {
   const productID = useSelector((state) => state.productID);
   const productSales = useSelector((state) => state.productSales);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -28,14 +30,14 @@ export const ProductSalesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {productSales.map((product) => (
+          {productSales ? productSales.map((product) => (
             <tr key={product.saleId}>
               <td>{product.saleId}</td>
               <td>{product.salePrice}</td>
               <td>{product.saleQty}</td>
               <td>{product.saleDate}</td>
             </tr>
-          ))}
+          )) : null}
         </tbody>
       </table>
       <button
