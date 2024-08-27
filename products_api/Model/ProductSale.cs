@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace products_api.Model
 {
@@ -11,6 +7,6 @@ namespace products_api.Model
         public int ProductId { get; set; }
         public double SalePrice { get; set; }
         public int SaleQty { get; set; }
-        public string SaleDate { get; set; } = null!;
+        public string? SaleDate { get; set; }
     }
 }
