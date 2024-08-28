@@ -9,6 +9,7 @@ namespace products_api.Controllers
     public class ProductController(IHttpClientFactory httpClientFactory) : ControllerBase
     {
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
+        private const string productsURL = "https://singularsystems-tech-assessment-sales-api2.azurewebsites.net/products";
 
         [HttpGet]
         public async Task<ActionResult<IAsyncEnumerable<Product>>> GetProducts()
@@ -16,9 +17,8 @@ namespace products_api.Controllers
             try
             {
                 var httpClient = _httpClientFactory.CreateClient();
-                var productsURL = "https://singularsystems-tech-assessment-sales-api2.azurewebsites.net/products";
-                
                 var request = new HttpRequestMessage(HttpMethod.Get, productsURL);
+                
                 var response = await httpClient.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)

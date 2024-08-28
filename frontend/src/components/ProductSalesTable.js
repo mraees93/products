@@ -22,7 +22,7 @@ export const ProductSalesTable = () => {
 
   useEffect(() => {
     if (productSales.length > 0) setDataIsLoading(false);
-  });
+  }, [productSales, setDataIsLoading]);
 
   return (
     <>

@@ -17,7 +17,7 @@ export const Products = () => {
 
   useEffect(() => {
     if (products.length > 0) setDataIsLoading(false);
-  });
+  }, [products, setDataIsLoading]);
 
   return (
     <>
